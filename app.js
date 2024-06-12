@@ -18,6 +18,18 @@ app.post("/",(req,res)=>{
      res.json({"status":"success"})
 })
 
+app.post("/view",(req,res)=>{
+    vaccinemodel.find().then(
+     (data)=>{
+         res.json(data)
+     }
+    ).catch(
+     (error)=>{
+         res.send(error)
+     }
+    )
+ })
+
 
 
 
